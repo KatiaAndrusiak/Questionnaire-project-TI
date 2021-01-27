@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+
+<title>Projekt 2</title>
+<!-- <link rel="icon" href="icon5.png" type="image/icontype"> -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="rest.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Ankieta o podróżach</h1>
+        </div>
+        
+    </header>
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Forma')">Forma</button>
+        <button class="tablinks" onclick="set_results(); openTab(event, 'Wyniki') ">Wyniki</button>
+        <button class="tablinks" id="logout" onclick="openTab(event, 'Login'); _logout()" style="display: none;">Log out</button>
+        <button class="tablinks" id="login" onclick="openTab(event, 'Login')">Log in</button>
+    </div>
+
+    <div class="formdiv tabcontent" , id='Forma'>
+        <form name="form1"  method="POST" >
+            <div class="question">
+                <p>1. Ile masz lat? *</p>
+                <input name="age" type="number" size="30" />
+            </div>
+           
+            <div class="question">
+                <p>2. Czy lubisz podróżować? *</p>
+                <div cl>
+                <input type="radio" id="1tak" name="travel" value="tak">
+                <label for="1tak">Tak</label>
+                </div>
+
+                <div>
+                <input type="radio" id="1nie" name="travel" value="nie">
+                <label for="1nie">Nie</label>
+                </div>
+
+                <div>
+                <input type="radio" id="1niep" name="travel" value="nie podróżuję">
+                <label for="1niep">Wcale nie podróżuję...</label>
+                </div>
+            </div>
+                 
+            <div class="question">
+                <p>3. Jak często podróżujesz? *</p>
+                <div>
+                <input type="radio" id="2tak" name="travel2" value="tak">
+                <label for="2tak">Często</label>
+                </div>
+
+                <div>
+                <input type="radio" id="2nie" name="travel2" value="nie">
+                <label for="2nie">Nie często</label>
+                </div>
+
+                <div>
+                <input type="radio" id="2niep" name="travel2" value="nie podróżuję">
+                <label for="2niep">Wcale nie podróżuję...</label>
+                </div>
+            </div>
+                
+
+
+            <div class="question">
+                <p>4. Gdzie najbardziej lubisz wyjeżdżasz? *</p>
+                <div>
+                <input type="radio" id="region" name="travel3" value="region">
+                <label for="region">W obrębie regionu</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="kraj" name="travel3" value="kraj">
+                    <label for="kraj">W obrębie kraju</label>
+                    </div>
+
+                <div>
+                <input type="radio" id="zagranica" name="travel3" value="zagranica">
+                <label for="zagranica">Za granicę</label>
+                </div>
+
+                <div>
+                <input type="radio" id="3niep" name="travel3" value="nie podróżuję">
+                <label for="3niep">Wcale nie podróżuję...</label>
+                </div>
+            </div>   
+            <input type="button" name="B1" value="Zapisz"  onclick="save_answers()" />
+            <p>*pole wymagane</p>
+            <p id="result1">
+
+          </p>
+        </form>
+    </div>
+
+    <div class="formdiv tabcontent" , id='Login'>
+        <form name="form2"  method="POST" >
+            <div class="login">
+                <p>Login*</p>
+                <input name="login" id ="log" type="text" size="30" />
+            </div>
+            <div class="login">
+                <p>Hasło*</p>
+                <input name="haslo" id="pass" type="text" size="30" />
+            </div>
+            <input type="button" name="B2" value="Zaloguj"  onclick="_login()" />
+            <p>or</p>
+            <input type="button" name="B3" value="Zarejestruj" onclick="_register()" />
+            <p id="result">
+
+          </p>
+        </form>
+
+
+    </div>
+
+    <div class="formdiv tabcontent" , id='Wyniki'>
+         <p id="data"></p>
+         <div id="onlineRes">
+           <div id="chart1" class="charts"></div>
+           <div id="chart2" class="charts"></div>
+           <div id="chart3" class="charts"></div>
+           <div id="chart4" class="charts"></div>
+         </div>
+         
+    </div>
+
+ 
+  
+    <!-- <footer>
+        <div class="divfoot">
+            <h4>Kateryna Andrusiak</h4>
+        </div>
+    </footer>    -->
+</body>
+
+</html>
